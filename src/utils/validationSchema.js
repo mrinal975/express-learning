@@ -21,4 +21,8 @@ export const validationSchema = {
       errorMessage: "Username must be between 3 and 20 characters",
     },
   },
+  passport: {
+    notEmpty: true,
+    errorMessage: "password is required",
+  },
 };
