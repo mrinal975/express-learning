@@ -15,15 +15,9 @@ router.get("/", (req, res) => {
   res.status(200).send({ msg: "Hello World!" });
 });
 
-router.get("/api/users", (req, res) => {
-  const {
-    query: { filter, value },
-  } = req;
-
-  if (!filter && !value) return res.status(200).send(mockUsers);
-  return res
-    .status(200)
-    .send(mockUsers.filter((user) => user[filter].includes(value)));
+router.get("/api/users", async (req, res) => {
+  const users = await User.find({});
+  return res.status(200).send(users);
 });
 
 router.post("/api/users", checkSchema(validationSchema), async (req, res) => {
