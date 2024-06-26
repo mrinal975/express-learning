@@ -14,7 +14,6 @@ passport.deserializeUser((id, done) => {
   } catch (err) {
     done(err, null);
   }
-  done(null, user);
 });
 
 export default passport.use(
