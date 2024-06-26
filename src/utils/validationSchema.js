@@ -1,6 +1,5 @@
 export const validationSchema = {
   email: {
-    in: ["body"],
     notEmpty: true,
     errorMessage: "Email is required",
     isEmail: true,
@@ -21,8 +20,9 @@ export const validationSchema = {
       errorMessage: "Username must be between 3 and 20 characters",
     },
   },
-  passport: {
-    notEmpty: true,
-    errorMessage: "password is required",
+  password: {
+    notEmpty: {
+      errorMessage: "password is required",
+    },
   },
 };
